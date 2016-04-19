@@ -1,0 +1,6 @@
+test
+test2
+**/.idea/**
+**/CMakeLists.txt
+**/*.o
+**/*.tgz
