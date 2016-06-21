@@ -15,6 +15,18 @@ pid_t ownFork(fork_func_callback_t fork_function, fork_func_param_t params){
 
     pid_t pid = fork();
 
+    switch (pid) {
+        case -1:
+            (void) fprintf(stderr, "Cannot fork!\n");
+            exit(EXIT_FAILURE);
+        case 0:
+            // child tasks ...
+            break;
+        default:
+            // parent tasks ...
+            break;
+    }
+
     switch(pid){
         case 0:
             exit(fork_function(params));
